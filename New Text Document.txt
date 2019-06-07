@@ -1,0 +1,31 @@
+import java.io.*;
+import java.net.*;
+public class ServerSideSocket{
+public void run(){
+try{
+int serverport=2040;
+ServerSocket serversocket=new ServerSocket(serverport);
+serversocket.setSoTimeout(10000);
+while(true){
+System.out.println("Waiting for client on port"+serversocket.getLocalport()+"...");
+Socet server=serverSocket.accept();
+System.out.println("Just connected to "+servergetRemoteSocketAddress());
+PrintWriter to Client=new PrintWriter(server.getOutputStream(),true);
+BufferedReader from client=new BufferedReader(new InputStreamReader(server.getInputStream()));
+String line=from client.readline();
+System.out.println("Server received: "+line);
+toclient.println("Thank you for connecting to "+server.getLocalSocketAddress()+ "\nGoodBye!..");
+}
+}
+catch(UnknownHostExceptio ex){
+ex.printStackTrace();
+}
+catch(IOException e){
+e.printStackTrace();
+}
+}
+public static void main(String args[]){
+ServerSideSocket srv=new ServerSideSocket();
+srv.run();
+}
+}
